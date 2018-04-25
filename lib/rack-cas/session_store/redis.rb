@@ -13,7 +13,7 @@ module RackCAS
         session ? {'sid' => session_id, 'data' => session} : session
       end
 
-      def self.write(session_id:, data:, cas_ticket: )
+      def self.write(session_id, data, cas_ticket )
         #create a row with the session_id and the data
         #create a row with the cas_ticket acting as a reverse index
         results = self.client.pipelined do
